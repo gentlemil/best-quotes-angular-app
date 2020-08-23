@@ -9,7 +9,8 @@ import { Quotation } from './models/quotation';
 })
 export class AppComponent {
   
-  showForm = false;
+  showForm = false;   // pole do wysw. formularza
+  quotes: Quotation[] = QUOTES;
 
   onSwitchForm(): void {
     this.showForm = !this.showForm;
