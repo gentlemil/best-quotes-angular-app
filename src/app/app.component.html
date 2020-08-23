@@ -1,9 +1,5 @@
 <!-- Nagłówek -->
-<nav>
-  <div class="nav-wrapper teal darken-3">
-    <span class="brand-logo center">Best Quotes You've Ever Heard</span>
-  </div>
-</nav>
+<app-navbar title="Best Quotes You've Ever Heard"></app-navbar>
 
 <div class="container q-container">
   <!--Dodawanie cytatu-->
@@ -69,34 +65,8 @@
 
     <!-- Sekcja rankigów -->
     <div class="col s4">
-      <div class="col s12">
-        <h5>BEST QUOTES</h5>
-        <div class="collection" >
-          <ng-container *ngFor="let quotation of quotes">
-            <p class="collection-item" *ngIf="quotation.votes > 0">
-              <span class="blue lighten-4 badge">
-                {{ quotation.votes }}
-              </span>
-              {{ quotation.sentence }}<br />
-              <span class="blue-text">{{ quotation.author }}</span>
-            </p>
-          </ng-container>
-        </div>
-      </div>
-      <div class="col s12">
-        <h5>WORST QUOTES</h5>
-        <div class="collection">
-          <ng-container *ngFor="let quotation of quotes">
-            <p class="collection-item"  *ngIf="quotation.votes < 0">
-              <span class="blue lighten-4 badge">
-                {{ quotation.votes }}
-              </span>
-              {{ quotation.sentence }}<br />
-              <span class="blue-text">{{ quotation.author }}</span>
-            </p>
-          </ng-container>
-        </div>
-      </div>
+      <app-ranking title='BEST QUOTES' [quotes]="bestQuotes()"></app-ranking>
+      <app-ranking title="WORST QUOTES" [quotes]="worstQuotes()"></app-ranking>
     </div>
   </div>
 </div>
