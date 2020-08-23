@@ -30,5 +30,7 @@ export class AppComponent {
     };   // resetujemy obiekt quotation przypisujac mu puste wartosci
   }
 
-
+  addVote(quotation: Quotation, value: number) {
+    quotation.votes += value;
+  }
 }

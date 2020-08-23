@@ -50,11 +50,16 @@
               <span class="badge black left white-text">
                 {{ quotation.votes }}
               </span>
-              <button class="btn blue mr-5">
-                <i class="material-icons">exposure_plus_1</i>
+              <button 
+                class="btn blue mr-5"
+                (click)="addVote(quotation, +1)"
+                >
+                <i class="material-icons">+</i>
               </button>
-              <button class="btn brown">
-                <i class="material-icons">exposure_neg_1</i>
+              <button 
+                class="btn brown"
+                (click)="addVote(quotation, -1)">
+                <i class="material-icons">-</i>
               </button>
             </div>
           </div>
